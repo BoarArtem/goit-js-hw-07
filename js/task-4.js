@@ -9,14 +9,16 @@ getForm.addEventListener("input", (event) => {
 getForm.addEventListener("submit", (s) => {
   s.preventDefault();
 
-  const getUserEmail = getInputEmail.value.trim();
-  const getUserPassword = getInputPassword.value.trim();
+  const email = getInputEmail.value.trim();
+  const password = getInputPassword.value.trim();
 
-  if (getUserEmail && getUserPassword) {
-    const userInfoObject = { getUserEmail, getUserPassword };
-    console.log("User information:", userInfoObject);
-    getForm.reset();
-  } else {
+  if(!email || !password) {
     alert("All form fields must be filled in");
+    return;
   }
+
+  const userInfo = { email, password };
+  console.log("User information", userInfo);
+  form.reset()
+  
 });
