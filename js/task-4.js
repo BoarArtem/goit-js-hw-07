@@ -19,6 +19,7 @@ getForm.addEventListener("submit", (s) => {
 
   const userInfo = { email, password };
   console.log("User information", userInfo);
-  form.reset()
+
+  getForm.reset()
   
 });
